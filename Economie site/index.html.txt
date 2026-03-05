@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Gândim Economia în Mod Responsabil</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:white;
+color:black;
+}
+
+header{
+background:black;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+header h1{
+color:red;
+font-size:40px;
+}
+
+section{
+padding:60px;
+max-width:900px;
+margin:auto;
+}
+
+.idea{
+background:#f5f5f5;
+margin:20px 0;
+padding:25px;
+border-left:6px solid red;
+border-radius:8px;
+}
+
+h2{
+color:red;
+}
+
+button{
+background:red;
+color:white;
+border:none;
+padding:12px 20px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:black;
+}
+
+.quiz{
+background:#f0f0f0;
+padding:30px;
+border-radius:10px;
+}
+
+.answers button{
+display:block;
+margin:10px 0;
+width:100%;
+}
+
+#score{
+font-size:22px;
+color:red;
+margin-top:20px;
+}
+
+footer{
+background:black;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Gândim Economia în Mod Responsabil</h1>
+<p>Un proiect despre consum inteligent și dezvoltare sustenabilă</p>
+</header>
+
+<section>
+
+<h2>10 Idei pentru o Economie Responsabilă</h2>
+
+<div class="idea" data-aos="fade-up">
+<h3>1. Economia responsabilă</h3>
+<p>Folosirea resurselor într-un mod inteligent pentru prezent și viitor.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>2. Consum responsabil</h3>
+<p>Să cumpărăm doar ceea ce avem nevoie.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>3. Reducerea risipei</h3>
+<p>Risipa afectează economia și mediul.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>4. Reciclarea</h3>
+<p>Materialele pot fi refolosite și transformate în produse noi.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>5. Economisirea energiei</h3>
+<p>Reducerea consumului de energie protejează mediul.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>6. Produse locale</h3>
+<p>Cumpărarea produselor locale susține economia comunității.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>7. Protejarea mediului</h3>
+<p>Economia trebuie să respecte natura.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>8. Investiții sustenabile</h3>
+<p>Investițiile în energie verde sunt viitorul economiei.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>9. Responsabilitatea companiilor</h3>
+<p>Companiile trebuie să fie etice și responsabile.</p>
+</div>
+
+<div class="idea" data-aos="fade-up">
+<h3>10. Rolul fiecăruia</h3>
+<p>Fiecare persoană poate contribui la o economie mai bună.</p>
+</div>
+
+</section>
+
+<section>
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<p id="question"></p>
+
+<div class="answers" id="answers"></div>
+
+<p id="score"></p>
+
+<button onclick="restartQuiz()">Restart Quiz</button>
+
+</div>
+
+</section>
+
+<footer>
+Proiect educațional – Economia responsabilă
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+AOS.init();
+
+const quiz = [
+
+{
+q:"Ce înseamnă economia responsabilă?",
+a:["Consum nelimitat","Folosirea inteligentă a resurselor","Ignorarea mediului","Risipa"],
+correct:1
+},
+
+{
+q:"Ce înseamnă consum responsabil?",
+a:["Cumpărarea impulsivă","Cumpărarea doar a lucrurilor necesare","Risipa","Exces"],
+correct:1
+},
+
+{
+q:"Reciclarea ajută la:",
+a:["Creșterea poluării","Reducerea reutilizării","Refolosirea materialelor","Distrugerea naturii"],
+correct:2
+},
+
+{
+q:"Economisirea energiei:",
+a:["Crește costurile","Ajută mediul","Crește poluarea","Nu contează"],
+correct:1
+},
+
+{
+q:"Produsele locale:",
+a:["Ajută economia locală","Sunt inutile","Cresc poluarea","Nu contează"],
+correct:0
+},
+
+{
+q:"Risipa alimentară este:",
+a:["Benefică","O problemă economică","Normală","Necesara"],
+correct:1
+},
+
+{
+q:"Investițiile sustenabile sunt:",
+a:["În energie verde","În poluare","În risipă","În exploatare"],
+correct:0
+},
+
+{
+q:"Companiile responsabile:",
+a:["Respectă mediul","Poluează","Ignoră angajații","Nu respectă legile"],
+correct:0
+},
+
+{
+q:"Protejarea mediului este:",
+a:["Inutilă","Importantă pentru economie","Opțională","Imposibilă"],
+correct:1
+},
+
+{
+q:"Cine poate contribui la economia responsabilă?",
+a:["Doar guvernul","Doar companiile","Fiecare persoană","Nimeni"],
+correct:2
+}
+
+];
+
+let current=0;
+let score=0;
+
+function loadQuestion(){
+
+if(current>=quiz.length){
+
+document.getElementById("question").innerHTML="Quiz terminat!";
+document.getElementById("answers").innerHTML="";
+document.getElementById("score").innerHTML="Scor: "+score+" / "+quiz.length;
+return;
+
+}
+
+let q=quiz[current];
+
+document.getElementById("question").innerHTML=q.q;
+
+let answersHTML="";
+
+q.a.forEach((ans,i)=>{
+
+answersHTML+=`<button onclick="answer(${i})">${ans}</button>`;
+
+});
+
+document.getElementById("answers").innerHTML=answersHTML;
+
+}
+
+function answer(i){
+
+if(i===quiz[current].correct) score++;
+
+current++;
+
+loadQuestion();
+
+}
+
+function restartQuiz(){
+
+current=0;
+score=0;
+
+loadQuestion();
+
+document.getElementById("score").innerHTML="";
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Gândim economia în mod responsabil</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:white;
+color:black;
+}
+
+header{
+background:black;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+.logo{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.logo-circle{
+width:40px;
+height:40px;
+background:red;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+color:white;
+}
+
+h1{
+color:red;
+font-size:40px;
+}
+
+.hero{
+padding:60px;
+text-align:center;
+}
+
+.hero button{
+margin-top:20px;
+padding:12px 25px;
+background:red;
+color:white;
+border:none;
+font-size:18px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.hero button:hover{
+background:black;
+}
+
+.section{
+padding:60px;
+max-width:1000px;
+margin:auto;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#f4f4f4;
+padding:25px;
+border-left:6px solid red;
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+h2{
+color:red;
+margin-bottom:20px;
+}
+
+.stats{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+gap:20px;
+text-align:center;
+}
+
+.stat{
+background:black;
+color:white;
+padding:30px;
+border-radius:10px;
+width:200px;
+}
+
+.stat h3{
+font-size:40px;
+color:red;
+}
+
+.quiz{
+background:#f4f4f4;
+padding:30px;
+border-radius:10px;
+max-width:600px;
+margin:auto;
+text-align:center;
+}
+
+.answers button{
+display:block;
+width:100%;
+margin:10px 0;
+padding:12px;
+border:none;
+background:red;
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+}
+
+.answers button:hover{
+background:black;
+}
+
+.progress{
+height:10px;
+background:#ddd;
+margin:15px 0;
+border-radius:5px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:10px;
+background:red;
+width:0%;
+}
+
+#result{
+font-size:24px;
+margin-top:20px;
+}
+
+footer{
+margin-top:60px;
+background:black;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<div class="logo-circle">E</div>
+<h1>Gândim economia în mod responsabil</h1>
+</div>
+
+<p>Proiect despre consum inteligent și dezvoltare sustenabilă</p>
+
+</header>
+
+<section class="hero">
+<p>Descoperă cum putem construi o economie mai responsabilă pentru viitor.</p>
+<button onclick="document.getElementById('idei').scrollIntoView()">Începe explorarea</button>
+</section>
+
+<section class="section" id="idei">
+
+<h2>10 Idei pentru o economie responsabilă</h2>
+
+<div class="cards">
+
+<div class="card" data-aos="fade-up"><b>1</b> Economia responsabilă înseamnă folosirea inteligentă a resurselor.</div>
+
+<div class="card" data-aos="fade-up"><b>2</b> Consum responsabil – cumpărăm doar ce avem nevoie.</div>
+
+<div class="card" data-aos="fade-up"><b>3</b> Reducerea risipei protejează mediul și economia.</div>
+
+<div class="card" data-aos="fade-up"><b>4</b> Reciclarea permite refolosirea materialelor.</div>
+
+<div class="card" data-aos="fade-up"><b>5</b> Economisirea energiei reduce costurile.</div>
+
+<div class="card" data-aos="fade-up"><b>6</b> Produsele locale susțin comunitatea.</div>
+
+<div class="card" data-aos="fade-up"><b>7</b> Protejarea mediului este esențială.</div>
+
+<div class="card" data-aos="fade-up"><b>8</b> Investițiile sustenabile sunt viitorul.</div>
+
+<div class="card" data-aos="fade-up"><b>9</b> Companiile trebuie să fie responsabile.</div>
+
+<div class="card" data-aos="fade-up"><b>10</b> Fiecare persoană poate contribui.</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Statistici globale</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3 id="c1">0</h3>
+<p>% risipă alimentară</p>
+</div>
+
+<div class="stat">
+<h3 id="c2">0</h3>
+<p>% reducere poluare prin reciclare</p>
+</div>
+
+<div class="stat">
+<h3 id="c3">0</h3>
+<p>% creștere energie verde</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Quiz</h2>
+
+<div class="quiz">
+
+<p id="question"></p>
+
+<div class="progress">
+<div class="progress-bar" id="bar"></div>
+</div>
+
+<div class="answers" id="answers"></div>
+
+<div id="result"></div>
+
+<button onclick="restartQuiz()">Restart Quiz</button>
+
+</div>
+
+</section>
+
+<footer>
+Proiect educațional – Economia responsabilă
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+AOS.init();
+
+function animateCounter(id,target){
+
+let count=0;
+
+let interval=setInterval(()=>{
+
+count++;
+
+document.getElementById(id).innerText=count;
+
+if(count>=target) clearInterval(interval);
+
+},30);
+
+}
+
+animateCounter("c1",30);
+animateCounter("c2",40);
+animateCounter("c3",25);
+
+const quiz=[
+
+{q:"Ce înseamnă economia responsabilă?",a:["Consum excesiv","Folosirea inteligentă a resurselor","Ignorarea mediului","Risipa"],c:1},
+
+{q:"Consum responsabil înseamnă:",a:["Cumpărăm impulsiv","Cumpărăm doar ce avem nevoie","Risipa","Exces"],c:1},
+
+{q:"Reciclarea:",a:["Crește poluarea","Refolosește materiale","Nu contează","Distruge natura"],c:1},
+
+{q:"Economisirea energiei:",a:["Crește costurile","Ajută mediul","Nu contează","Crește poluarea"],c:1},
+
+{q:"Produsele locale:",a:["Ajută economia locală","Sunt inutile","Poluează","Nu contează"],c:0},
+
+{q:"Risipa alimentară:",a:["Este normală","Este o problemă","Este benefică","Este necesară"],c:1},
+
+{q:"Investițiile sustenabile:",a:["În energie verde","În poluare","În risipă","În exploatare"],c:0},
+
+{q:"Companiile responsabile:",a:["Respectă mediul","Poluează","Ignoră angajații","Nu respectă legile"],c:0},
+
+{q:"Protejarea mediului:",a:["Este inutilă","Este importantă","Este opțională","Este imposibilă"],c:1},
+
+{q:"Cine contribuie la economia responsabilă?",a:["Guvernul","Companiile","Fiecare persoană","Nimeni"],c:2}
+
+];
+
+let current=0;
+let score=0;
+
+function loadQuestion(){
+
+if(current>=quiz.length){
+
+let medal="🥉";
+
+if(score>=8) medal="🥇";
+else if(score>=5) medal="🥈";
+
+document.getElementById("question").innerText="Quiz terminat!";
+document.getElementById("answers").innerHTML="";
+document.getElementById("result").innerHTML="Scor: "+score+"/10 "+medal;
+
+return;
+}
+
+let q=quiz[current];
+
+document.getElementById("question").innerText=q.q;
+
+let html="";
+
+q.a.forEach((ans,i)=>{
+
+html+=`<button onclick="answer(${i})">${ans}</button>`;
+
+});
+
+document.getElementById("answers").innerHTML=html;
+
+document.getElementById("bar").style.width=((current/quiz.length)*100)+"%";
+
+}
+
+function answer(i){
+
+if(i===quiz[current].c) score++;
+
+current++;
+
+loadQuestion();
+
+}
+
+function restartQuiz(){
+
+current=0;
+score=0;
+
+document.getElementById("result").innerHTML="";
+
+loadQuestion();
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
